@@ -1,8 +1,8 @@
 # dlx-dl-lambda
 DLX-DL Lambda Function
 
-git clone https://github.com/dag-hammarskjold-library/dlx-dl-lambda
+`git clone https://github.com/dag-hammarskjold-library/dlx-dl-lambda`
 
-pip install -r requirements
+`pip install -r requirements.txt`
 
-lambda deploy
+`lambda deploy`
