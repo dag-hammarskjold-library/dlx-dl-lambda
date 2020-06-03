@@ -5,6 +5,7 @@ handler: service.handler
 description: DLX-DL Periodic Task Runner
 runtime: python3.8
 role: service-role/dlx-dl-role-ggxqj9bh
+timeout: 315
 
 # Build options
 build:
