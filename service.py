@@ -4,7 +4,7 @@ import boto3
 ssm_client = boto3.client('ssm')
 connect_string = ssm_client.get_parameter(Name='connect-string')['Parameter']['Value']
 api_key = ssm_client.get_parameter(Name='undl-dhl-metadata-api-key')['Parameter']['Value']
-nonce_key = ssm_client.get_parameter(Name='undl-callback-nonce')
+nonce_key = ssm_client.get_parameter(Name='undl-callback-nonce')['Parameter']['Value']
 
 # dlx-dl --connect=$UNDLFILES --type=bib --modified_within=8640 --preview
 
