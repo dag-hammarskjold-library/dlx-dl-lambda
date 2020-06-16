@@ -4,6 +4,7 @@ import boto3
 ssm_client = boto3.client('ssm')
 connect_string = ssm_client.get_parameter(Name='connect-string')['Parameter']['Value']
 api_key = ssm_client.get_parameter(Name='undl-dhl-metadata-api-key')['Parameter']['Value']
+nonce_key = ssm_client.get_parameeter(Name='undl-callback-nonce')
 
 # dlx-dl --connect=$UNDLFILES --type=bib --modified_within=8640 --preview
 
@@ -23,7 +24,8 @@ def handler(event, context):
                 type=coll,
                 modified_within=300,
                 api_key=api_key,
-                log=connect_string
+                log=connect_string,
+                nonce_key=nonce_key
             )
         return {
             'statusCode': 200,
