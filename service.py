@@ -15,7 +15,7 @@ def handler(event, context):
         dlx_dl.main(
             connect=connect_string,
             type=coll,
-            modified_within=600,
+            modified_within=300,
             api_key=api_key,
             log=connect_string,
             nonce_key=nonce_key,
