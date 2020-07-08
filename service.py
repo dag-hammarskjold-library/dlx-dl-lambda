@@ -1,5 +1,6 @@
 import dlx_dl
 import boto3
+import traceback
 
 ssm_client = boto3.client('ssm')
 connect_string = ssm_client.get_parameter(Name='connect-string')['Parameter']['Value']
@@ -14,11 +15,12 @@ def handler(event, context):
         dlx_dl.main(
             connect=connect_string,
             type=coll,
-            modified_within=300,
+            modified_within=600,
             api_key=api_key,
             log=connect_string,
             nonce_key=nonce_key,
             callback_url=callback_url
         )
-    except:
-        raise
+    except Exception as exc:
+        traceback.print_exc()
+        pass
