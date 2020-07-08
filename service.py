@@ -7,34 +7,18 @@ api_key = ssm_client.get_parameter(Name='undl-dhl-metadata-api-key')['Parameter'
 nonce_key = ssm_client.get_parameter(Name='undl-callback-nonce')['Parameter']['Value']
 callback_url = ssm_client.get_parameter(Name='undl-callback-url')['Parameter']['Value']
 
-# dlx-dl --connect=$UNDLFILES --type=bib --modified_within=8640 --preview
-
-'''
-import dlx_dl
-
-dlx_dl.main(connect='<connection_string>', type='bib', modified_from='2020-04-06Z00:00', api_key='<api_key>')
-
-data = dlx_dl.LOG_DATA
-'''
-
 def handler(event, context):
+    coll = event['coll']
+    print("Processing {}".format(coll))
     try:
-        for coll in ['bib','auth']:
-            dlx_dl.main(
-                connect=connect_string,
-                type=coll,
-                modified_within=300,
-                api_key=api_key,
-                log=connect_string,
-                nonce_key=nonce_key,
-                callback_url=callback_url
-            )
-        return {
-            'statusCode': 200,
-            'body': 'Update complete.'
-        }
+        dlx_dl.main(
+            connect=connect_string,
+            type=coll,
+            modified_within=300,
+            api_key=api_key,
+            log=connect_string,
+            nonce_key=nonce_key,
+            callback_url=callback_url
+        )
     except:
-        return {
-            'statusCode': 500,
-            'body': 'Something went wrong.'
-        }
+        raise
