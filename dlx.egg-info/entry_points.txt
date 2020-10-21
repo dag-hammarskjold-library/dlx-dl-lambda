@@ -1,0 +1,4 @@
+[console_scripts]
+excel-marc = dlx.scripts.excel_marc:run
+init-indexes = dlx.scripts.init_indexes:run
+

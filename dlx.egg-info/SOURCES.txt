@@ -1,0 +1,7 @@
+README.md
+dlx.egg-info/PKG-INFO
+dlx.egg-info/SOURCES.txt
+dlx.egg-info/dependency_links.txt
+dlx.egg-info/entry_points.txt
+dlx.egg-info/requires.txt
+dlx.egg-info/top_level.txt

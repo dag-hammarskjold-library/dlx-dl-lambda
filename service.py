@@ -12,12 +12,12 @@ def handler(event, context):
     coll = event['coll']
     print("Processing {}".format(coll))
     try:
-        dlx_dl.main(
+        dlx_dl.run(
             connect=connect_string,
             type=coll,
             modified_within=300,
             api_key=api_key,
-            log=connect_string,
+            #log=connect_string,
             nonce_key=nonce_key,
             callback_url=callback_url
         )
