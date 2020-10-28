@@ -15,11 +15,13 @@ def handler(event, context):
         dlx_dl.run(
             connect=connect_string,
             type=coll,
-            modified_within=300,
+            #modified_within=300,
             api_key=api_key,
             #log=connect_string,
             nonce_key=nonce_key,
-            callback_url=callback_url
+            callback_url=callback_url,
+            source='dlx-dl-lambda',
+            modified_since_log=True
         )
     except Exception as exc:
         traceback.print_exc()
