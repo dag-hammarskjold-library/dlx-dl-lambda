@@ -21,7 +21,8 @@ def handler(event, context):
             nonce_key=nonce_key,
             callback_url=callback_url,
             source='dlx-dl-lambda',
-            modified_since_log=True
+            modified_since_log=True,
+            queue=300
         )
     except Exception as exc:
         traceback.print_exc()
