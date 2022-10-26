@@ -1,1 +1,1 @@
-dlx-dl @ git+https://github.com/dag-hammarskjold-library/dlx-dl
+dlx-dl @ git+https://github.com/dag-hammarskjold-library/dlx-dl@572419a741b0b6fdf5a93332e260f68b1bf6073e
