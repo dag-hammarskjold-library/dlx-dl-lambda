@@ -1,15 +1,12 @@
-import dlx_dl
+import json
+from dlx_dl.scripts import sync
 
-def handler(event, context):
-    coll = event['coll']
-    print("Processing {}".format(coll))
+def handler(event, context): 
+    # event dict should contain the params expected by dlx.scripts.sync
+    
+    print(f'running with args: {json.dumps(event)}')
+    
     try:
-        dlx_dl.run(
-            type=coll,
-            source='dlx-dl-lambda',
-            modified_since_log=True,
-            queue=300,
-            use_api=True
-        )
+        sync.run(**event)
     except Exception as exc:
-        print('; '.join(str(exc).split('\n')))
+        print('; '.join(str(exc).split('\n'))) # puts exception text on one line for CloudWatch logs
