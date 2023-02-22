@@ -1,2 +1,2 @@
-dlx-dl @ git+https://github.com/dag-hammarskjold-library/dlx-dl@cbaf32316ab9af245daa31771bebe74a85bd995c
+dlx-dl @ git+https://github.com/dag-hammarskjold-library/dlx-dl@2c6ef2ee4a2ce6b610aed86b2d67c89db4d7d78d
 python-lambda==11.8.0
