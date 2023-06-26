@@ -9,5 +9,5 @@ bucket_name: dlx-dl-lambda
 timeout: 900
 
 # Build options
-build:
-  source_directories: lib # a comma delimited list of directories in your project root that contains source to package.
+#build:
+#  source_directories: lib # a comma delimited list of directories in your project root that contains source to package.
