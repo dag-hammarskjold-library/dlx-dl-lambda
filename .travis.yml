@@ -14,4 +14,4 @@ jobs:
   include:
     - stage: Prod
       script:
-        - lambda deploy_s3
+        - lambda deploy
