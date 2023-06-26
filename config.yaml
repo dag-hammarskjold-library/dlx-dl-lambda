@@ -5,6 +5,7 @@ handler: service.handler
 description: DLX-DL Periodic Task Runner
 runtime: python3.8
 role: service-role/dlx-dl-role-ggxqj9bh
+bucket_name: dlx-dl-lambda
 timeout: 900
 
 # Build options
