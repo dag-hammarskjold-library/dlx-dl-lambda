@@ -1,0 +1,18 @@
+branches:
+  only:
+  - master
+  - deploy
+  - travis-ci
+
+language: python
+python:
+- 3.8
+install:
+- pip install -r requirements.txt
+  
+jobs:
+  include:
+    - stage: Prod
+      script:
+        - lambda build
+        - lambda deploy

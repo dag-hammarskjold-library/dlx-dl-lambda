@@ -1,4 +1,0 @@
-deploy:
-  provider: lambda
-  function_name: dlx-dl
-  edge: true 
