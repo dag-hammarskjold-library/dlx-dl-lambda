@@ -14,5 +14,4 @@ jobs:
   include:
     - stage: Prod
       script:
-        - lambda build
         - lambda deploy
